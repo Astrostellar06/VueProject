@@ -2,24 +2,32 @@
     <BaseLayout>
         <div v-if="user">
             <h3>Welcome {{user.name}}</h3>
+            <SignoutButton/>
         </div>
         <div v-else>
-            <SigninButton/>
+            <p>Welcome to the CO2 emission calculator</p>
+            <p>Please sign in to continue</p>
+            <SigninButtonGoogle/><br>
+            <SigninButtonMicrosoft/>
         </div>
     </BaseLayout>
 </template>
 
 <script>
 import BaseLayout from '@/components/BaseLayout.vue';
-import SigninButton from '@/components/SigninButton.vue'
+import SigninButtonGoogle from '@/components/SigninButtonGoogle.vue'
+import SigninButtonMicrosoft from '@/components/SigninButtonMicrosoft.vue'
+import SignoutButton from '@/components/SignoutButton.vue';
 import { mapState } from 'vuex';
 
 export default {
     name: 'HomePage',
     components: {
-        BaseLayout,
-        SigninButton
-    },
+    BaseLayout,
+    SigninButtonGoogle,
+    SigninButtonMicrosoft,
+    SignoutButton
+},
     data() {
         return {
             click: 0,

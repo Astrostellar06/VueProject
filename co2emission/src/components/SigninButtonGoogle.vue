@@ -1,5 +1,4 @@
 <template>
-
     <GoogleLogin :callback="login"/>
 </template>
 
@@ -19,7 +18,7 @@ export default {
     },
     methods: {
         ...mapMutations(['setUser']),
-        login (response) {
+        login(response) {
             console.log(response);
             let user = decodeCredential(response.credential);
             console.log(user.name);
