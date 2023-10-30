@@ -21,35 +21,26 @@
                 <p>CO2e: {{ emissionsFlightResult.co2e }} {{ emissionsFlightResult.co2e_unit }}</p>
             </div>
             <br />
-            <p>Car Travel Emissions</p>
-            <br />
-            <input type="number" v-model="distance" placeholder="Distance in km" />
-            <button @click="calculateEmissionsTravel">Calculate Emissions for a car travel</button>
-            <div id="result" v-if="emissionsTravelResult">
-                <h2>Emissions Result</h2>
-                <p>{{ distance }}</p>
-                <p>CO2e: {{ emissionsTravelResult.co2e }} {{ emissionsTravelResult.co2e_unit }}</p>
-            </div>
+            <CustomCalculator />
         </div>
     </BaseLayout>
 </template>
   
 <script>
 import BaseLayout from '@/components/BaseLayout.vue';
+import CustomCalculator from '@/components/CustomCalculator.vue';
 
 export default {
     name: 'CalculatePage',
     components: {
         BaseLayout,
+        CustomCalculator
     },
     data() {
         return {
             apiKey: 'D9F3A5P7R9MB7ZK89PKQR27CBX2Y',
-            apiUrlDistance: 'https://beta4.api.climatiq.io/custom-mappings/estimate',
             apiUrl: 'https://beta3.api.climatiq.io/travel/flights',
             emissionsFlightResult: null,
-            emissionsTravelResult: null,
-            distance: 0,
             listAirports: [],
             iata_code_departure: '',
             iata_code_arrival: '',
@@ -95,41 +86,12 @@ export default {
                 .then((response) => response.json())
                 .then((data) => {
                     this.emissionsFlightResult = data;
+                    console.log(data);
                 })
                 .catch((error) => {
                     console.error(error);
                 });
         },
-        calculateEmissionsTravel(){
-            const requestData = {
-                custom_mapping: {
-                    label: 'car_consumption',
-                    data_version: '0.0',
-                },
-                parameters: {
-                    distance: this.distance,
-                    distance_unit: 'km'
-                }
-            };
-
-            const requestOptions = {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${this.apiKey}`,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(requestData),
-            };
-
-            fetch(this.apiUrlDistance, requestOptions)
-                .then((response) => response.json())
-                .then((data) => {
-                    this.emissionsTravelResult = data;
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-        }
     },
 };
 </script>
