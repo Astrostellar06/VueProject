@@ -10,7 +10,7 @@ export default {
             type: String,
             default: 'primary',
             validator: function (value) {
-                return ['primary', 'warn', 'danger'].includes(value);
+                return ['primary', 'warn', 'danger', 'blank'].includes(value);
             }
         },
         disable: {
@@ -23,16 +23,25 @@ export default {
             if (this.color === 'warn') {
                 return {
                     backgroundColor: '#e6a23c',
+                    color: 'white',
                     '--hoverColor': '#e2b674'
                 }
             } else if (this.color === 'danger') {
                 return {
                     backgroundColor: '#ea3a3a',
+                    color: 'white',
                     '--hoverColor': '#f56c6c'
+                }
+            } else if (this.color === 'blank') {
+                return {
+                    backgroundColor: 'white',
+                    color: 'black',
+                    '--hoverColor': '#c0c0c0'
                 }
             } else {
                 return {
                     backgroundColor: '#28b682',
+                    color: 'white',
                     '--hoverColor': '#30cb92'
                 }
             }
@@ -48,7 +57,6 @@ export default {
 
 <style scoped>
 button {
-    color: white;
     border: none;
     border-radius: 5px;
     padding: 7px;

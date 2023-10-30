@@ -72,7 +72,7 @@ h1 {
     display: flex;
     align-items: center;
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .text {
@@ -114,7 +114,8 @@ nav {
 nav > ul {
   display: flex;
   text-align: center;
-  height: 50px;
+  height: 45px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 nav ul {
@@ -127,7 +128,6 @@ nav ul:hover {
 }
 
 nav > ul > li {
-
   position: relative;
   height: 100%;
   flex: 1;

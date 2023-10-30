@@ -1,11 +1,11 @@
 <template>
     <BaseLayout>
         <div v-if="user">
-            <h3>Welcome {{user.name}}</h3>
+            <h3>Welcome {{user.name}} to the CO2 emission calculator</h3>
             <SignoutButton/>
             <BaseButton :color="'primary'">
                 <router-link to="/calculate" class="router">
-                    Calculate
+                    Calculate CO2 Emissions
                 </router-link>
             </BaseButton>
             <BaseButton :color="'primary'">
@@ -15,8 +15,9 @@
             </BaseButton>
         </div>
         <div v-else>
-            <p>Welcome to the CO2 emission calculator</p>
-            <p>Please sign in to continue</p>
+            <h3>Welcome to the CO2 emission calculator</h3>
+            <br>
+            <p>Please sign in to continue:</p>
             <SigninButtonGoogle/><br>
             <SigninButtonMicrosoft/>
         </div>
@@ -56,6 +57,7 @@ export default {
 </script>
 
 <style scoped>
+
 .buttons {
     margin-bottom: 30px;
 }
@@ -67,6 +69,10 @@ export default {
 .router {
     text-decoration: none;
     color: white;
+}
+
+h3 {
+    text-decoration: underline;
 }
 
 </style>

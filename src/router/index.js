@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../pages/HomePage.vue';
 import CalculatePage from '../pages/CalculatePage.vue';
 import GraphicPage from '../pages/GraphicPage.vue';
+import Page404 from '../pages/NotFoundPage.vue';
 
 const routes = [
   {
@@ -35,6 +36,10 @@ const routes = [
         }
     }
   },
+  {
+    path: '/:pathMatch(.*)*',
+    component: Page404,
+  }  
 ];
 
 const router = createRouter({
