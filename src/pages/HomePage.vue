@@ -3,6 +3,16 @@
         <div v-if="user">
             <h3>Welcome {{user.name}}</h3>
             <SignoutButton/>
+            <BaseButton :color="'primary'">
+                <router-link to="/calculate" class="router">
+                    Calculate
+                </router-link>
+            </BaseButton>
+            <BaseButton :color="'primary'">
+                <router-link to="/graphic" class="router">
+                    Visualize Data
+                </router-link>
+            </BaseButton>
         </div>
         <div v-else>
             <p>Welcome to the CO2 emission calculator</p>
@@ -14,10 +24,10 @@
 </template>
 
 <script>
+import BaseButton from '@/components/BaseButton.vue';
 import BaseLayout from '@/components/BaseLayout.vue';
 import SigninButtonGoogle from '@/components/SigninButtonGoogle.vue'
 import SigninButtonMicrosoft from '@/components/SigninButtonMicrosoft.vue'
-import SignoutButton from '@/components/SignoutButton.vue';
 import { mapState } from 'vuex';
 
 export default {
@@ -26,7 +36,7 @@ export default {
     BaseLayout,
     SigninButtonGoogle,
     SigninButtonMicrosoft,
-    SignoutButton
+    BaseButton
 },
     data() {
         return {
@@ -52,6 +62,11 @@ export default {
 
 .AsyncButton {
     margin-bottom: 30px;
+}
+
+.router {
+    text-decoration: none;
+    color: white;
 }
 
 </style>

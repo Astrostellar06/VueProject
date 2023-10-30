@@ -3,17 +3,17 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 // Import your components for the routes
 import HomePage from '../pages/HomePage.vue';
-//import ConversationsIndexPage from '../pages/ConversationsIndexPage.vue';
-//import ConversationsShowPage from '../pages/ConversationShowPage.vue';
+import CalculatePage from '../pages/CalculatePage.vue';
+import GraphicPage from '../pages/GraphicPage.vue';
 
 const routes = [
   {
     path: '/',
     component: HomePage,
   },
-  /*{
-    path: '/conversations',
-    component: ConversationsIndexPage,
+  {
+    path: '/calculate',
+    component: CalculatePage,
     beforeEnter: (to, from, next) => {
         const isLoggedIn = localStorage.getItem('isLoggedIn');
         if (!isLoggedIn) {
@@ -24,9 +24,17 @@ const routes = [
     }
   },
   {
-    path: '/conversations/:id',
-    component: ConversationsShowPage,
-  }*/
+    path: '/graphic',
+    component: GraphicPage,
+    beforeEnter: (to, from, next) => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+            next({ path: '/' });
+        } else {
+            next();
+        }
+    }
+  },
 ];
 
 const router = createRouter({
