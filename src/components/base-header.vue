@@ -50,7 +50,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    background-color: #28b682;
+    background-color: #0680a5;
     color: white;
     margin: -8px;
     margin-bottom: 20px;

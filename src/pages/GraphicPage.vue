@@ -1,6 +1,10 @@
 <template>
     <BaseLayout>
-        Graphic page
+        <div>
+            <h1>GraphicPage</h1>
+            <br />
+
+        </div>
     </BaseLayout>
 </template>
 
@@ -13,6 +17,4 @@ export default {
         BaseLayout,
     },
 }
-
-
 </script>
