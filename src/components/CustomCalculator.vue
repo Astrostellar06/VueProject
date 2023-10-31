@@ -1,14 +1,14 @@
 <template>
     <div>
         <p>Average Car Travel Emissions</p>
-            <br />
-            <input type="number" v-model="distance" placeholder="Distance in km" />
-            <button @click="calculateEmissionsTravel">Calculate Emissions for a car travel</button>
-            <div id="result" v-if="emissionsTravelResult">
-                <h2>Emissions Result</h2>
-                <p>{{ distance }}</p>
-                <p>CO2e: {{ emissionsTravelResult.co2e }} {{ emissionsTravelResult.co2e_unit }}</p>
-            </div>
+        <br />
+        <input type="number" v-model="distance" placeholder="Distance in km" />
+        <button @click="calculateEmissionsTravel">Calculate Emissions for a car travel</button>
+        <div id="result" v-if="emissionsTravelResult">
+            <h2>Emissions Result</h2>
+            <p>{{ distance }}</p>
+            <p>CO2e: {{ emissionsTravelResult.co2e }} {{ emissionsTravelResult.co2e_unit }}</p>
+        </div>
     </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
         };
     },
     methods: {
-        calculateEmissionsTravel(){
+        calculateEmissionsTravel() {
             const requestData = {
                 emission_factor: {
                     activity_id: 'passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na',
