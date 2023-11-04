@@ -1,6 +1,5 @@
 # co2emission
-A Web Project using the Vue.js framework with the goal to calculate CO2 emission
-By Esteban Finance-Madureira & Clément Laubertie
+A Web Project using the Vue.js framework with the goal to calculate CO2 emission using the Climatiq API
 
 ## Project setup
 ```
