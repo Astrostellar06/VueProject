@@ -16,10 +16,10 @@
     <br>
     <input type="number" v-model="duration" v-if="providerHasBeenSelected" placeholder="Duration in hours" @change="change3">
     <br>
-    <BaseButton @click="calculateEmissionComputing" :disabled="disabled">Calculate Cloud Computing for a flight</BaseButton>
+    <BaseButton @click="calculateEmissionComputing" :disabled="disabled">Calculate Emissions for this Cloud Computing Activity</BaseButton>
     <div v-if="emissionsComputingResult">
         <h2>Emissions Result:</h2>
-        <p>{{ this.emissionsComputingResult.total_co2e.toFixed(2) }} {{ this.emissionsComputingResult.total_co2e_unit }} were emitted.</p>
+        <p>{{ this.emissionsComputingResult.total_co2e.toFixed(2) }} {{ this.emissionsComputingResult.total_co2e_unit }} of CO2 were emitted.</p>
     </div>
 </template>
 

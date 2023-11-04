@@ -2,8 +2,7 @@
     <BaseLayout>
         <body>
         <div>
-            <h1>Calculate CO2 emissions for different activities</h1>
-            <FlightCalculator /><br><br>
+            <h1>Calculate CO2 emissions for cloud computing activities</h1>
             <CloudComputingCalculator/>
         </div>
     </body>
@@ -12,14 +11,12 @@
   
 <script>
 import BaseLayout from '@/components/BaseLayout.vue';
-import FlightCalculator from '@/components/FlightCalculator.vue';
 import CloudComputingCalculator from '@/components/CloudComputingCalculator.vue';
 
 export default {
     name: 'CalculatePage',
     components: {
         BaseLayout,
-        FlightCalculator,
         CloudComputingCalculator,
     },
 };
@@ -29,6 +26,7 @@ export default {
 h1 {
     text-decoration: underline;
     margin: 30px;
+    font-size: medium;
 }
 
 body {

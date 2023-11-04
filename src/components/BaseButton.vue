@@ -40,7 +40,7 @@ export default {
                 }
             } else {
                 return {
-                    backgroundColor: '#28b682',
+                    backgroundColor: '#079dcb',
                     color: 'white',
                     '--hoverColor': '#30cb92'
                 }
@@ -65,12 +65,14 @@ button {
     cursor: pointer;
     margin: 10px;
     font-size: medium;
-    transition: background-color 0.6s;
+    transition: background-color 0.6s, box-shadow 0.2s, transform 0.2s;
 }
 
 button:hover {
     background-color: var(--hoverColor) !important;
-    transition: background-color 0.4s;
+    transition: background-color 0.4s, box-shadow 0.2s, transform 0.2s;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+    transform: translate(-2px, -2px)
 }
 
 button:disabled {

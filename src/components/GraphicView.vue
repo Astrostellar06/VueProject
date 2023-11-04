@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class=chart-container v-if="waterLoaded">
-      <h2>Comparison of Water Consumption between France and the UK</h2>
+      <h2>Comparison of Water Consumption between France and the UK (in kg)</h2>
       <column-chart class="charts" :data="waterData" width="800px" height="500px" :library="chartLibrary" :colors="[['#0b6e00', '#006ca2']]"></column-chart>
     </div>
     <br />
     <div class=chart-container v-if="electricityLoaded">
-      <h2>Comparison of Electricity Consumption between France and the UK</h2>
+      <h2>Comparison of Electricity Consumption between France and the UK (in kg)</h2>
       <column-chart class="charts" :data="electricityData" width="800px" height="500px" :library="chartLibrary" :colors="[['#0b6e00', '#006ca2']]"></column-chart>
     </div>
     <br />
     <div class=chart-container v-if="hotelLoaded">
-      <h2>Comparison of Hotels Emissions between France and the UK</h2>
+      <h2>Comparison of Hotels Emissions between France and the UK (in kg)</h2>
       <column-chart class="charts" :data="hotelData" width="800px" height="500px" :library="chartLibrary" :colors="[['#0b6e00', '#006ca2']]"></column-chart>
     </div>
   </div>
@@ -222,9 +222,7 @@ export default {
   }
 
   .charts {
-    /*center the chart*/
     margin: auto;
-
   }
 
 </style>

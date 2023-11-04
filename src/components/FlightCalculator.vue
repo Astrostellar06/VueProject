@@ -14,7 +14,7 @@
     <BaseButton @click="calculateEmissionsFlight" :color="'primary'" :disabled="this.disabled">Calculate Emissions for a flight</BaseButton>
     <div v-if="emissionsFlightResult">
         <h2>Emissions Result:</h2>
-        <p>{{ emissionsFlightResult.co2e.toFixed(2) }} {{ emissionsFlightResult.co2e_unit }} were emitted.</p>
+        <p>{{ emissionsFlightResult.co2e.toFixed(2) }} {{ emissionsFlightResult.co2e_unit }} of CO2 were emitted.</p>
     </div>
 </template>
 
@@ -29,7 +29,6 @@ export default {
     data() {
         return {
             apiKey: 'K5XS7KJYR3MX9CQR8JZ1G4DZ0QT0',
-            //apiUrl: 'https://beta3.api.climatiq.io/travel/distance',
             apiUrl: 'https://beta3.api.climatiq.io/travel/flights',
             emissionsFlightResult: null,
             listAirports: [],

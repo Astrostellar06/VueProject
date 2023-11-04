@@ -1,12 +1,16 @@
 <template>
+    <div class="space"></div>
     <footer>
-        <h1 class="credits">Prototype created for the project of ST2AWD | By Clément Laubertie | © 2023</h1>
+        <h1 class="credits">Prototype created for the project of ST2AWD | By Esteban Finance-Madureira & Clément Laubertie | © 2023</h1>
     </footer>
 </template>
 
 <script></script>
 
 <style scoped>
+.space {
+    height: 80px;
+}
 
 footer {
     background-color: #333;
