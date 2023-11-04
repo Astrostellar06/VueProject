@@ -17,7 +17,6 @@ footer {
     left: 0;
     right: 0;
     position: fixed;
-    margin: auto;
 }
 
 h1 {

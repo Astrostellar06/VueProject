@@ -1,5 +1,5 @@
 <template>
-    <BaseButton :color="'primary'" :disable="isPending" @click="handleClick()">Log in with Microsoft</BaseButton>
+    <BaseButton :color="'blank'" :disable="isPending" @click="handleClick()" class="button">Log in with Microsoft</BaseButton>
 </template>
 
 <script>
@@ -40,3 +40,11 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.button {
+    border: 1px solid #dadce0;
+}
+
+</style>
+
